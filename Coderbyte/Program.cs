@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Coderbyte.Problems;
+using System;
 
 namespace Coderbyte
 {
@@ -6,7 +7,9 @@ namespace Coderbyte
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            _ = FindIntersection.Solve(new string[] { "1, 3, 4, 7, 13", "1, 2, 4, 13, 15" });
+
+            Console.ReadLine();
         }
     }
 }
