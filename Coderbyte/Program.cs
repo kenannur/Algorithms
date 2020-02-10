@@ -11,6 +11,7 @@ namespace Coderbyte
             _ = QuestionsMarks.Solve("acc?7??sss?3rr1??????5");
             _ = AlphabetSoup.Solve("qwerty");
             _ = LongestWord.Solve("fun&!! time");
+            _ = FirstFactorial.Solve(8);
 
             Console.ReadLine();
         }
