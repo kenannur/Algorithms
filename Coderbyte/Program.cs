@@ -13,6 +13,7 @@ namespace Coderbyte
             _ = LongestWord.Solve("fun&!! time");
             _ = FirstFactorial.Solve(8);
             _ = FirstReverse.Solve("Hello world");
+            _ = LetterChanges.Solve("hello*3");
 
             Console.ReadLine();
         }
