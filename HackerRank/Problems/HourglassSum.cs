@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace HackerRank.Problems
@@ -7,25 +8,20 @@ namespace HackerRank.Problems
     {
         public static int Solve(int[][] arr)
         {
-            var sumList = new List<int>();
-            for (int i = 0; i < 4; i++)
+            var total = -100;
+            for (var y = 0; y <= 3; y++)
             {
-                for (int j = 0; j < 4; j++)
+                for (var x = 0; x <= 3; x++)
                 {
-                    var leftTop = arr[i][j];
-                    var top = arr[i + 1][j];
-                    var rightTop = arr[i + 2][j];
-                    var center = arr[i + 1][j + 1];
-                    var leftBottom = arr[i][j + 2];
-                    var bottom = arr[i + 1][j + 2];
-                    var rightBottom = arr[i + 2][j + 2];
-
-                    var total = leftTop + top + rightTop + center + leftBottom + bottom + rightBottom;
-                    sumList.Add(total);
+                    var sum = arr[y][x] + arr[y][x + 1] + arr[y][x + 2];
+                    sum += arr[y + 1][x + 1];
+                    sum += arr[y + 2][x] + arr[y + 2][x + 1] + arr[y + 2][x + 2];
+        
+                    if (total < sum)
+                        total = sum;
                 }
             }
-            var result = sumList.Max();
-            return result;
+            return total;
         }
 
         public static int[][] PrepareHourglassSumInput()
