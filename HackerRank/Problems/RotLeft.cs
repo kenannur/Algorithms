@@ -1,35 +1,21 @@
-﻿using System;
-
-namespace HackerRank.Problems
+﻿namespace HackerRank.Problems
 {
     public static class RotLeft
     {
-        // a is array, d is rotate left count
+        // a is array, d is shift left count
         public static int[] Solve(int[] a, int d)
         {
-            var counter = 0;
-            var resultArr = new int[a.Length];
-            while(counter < d)
+            var newArray = new int[a.Length];
+            for (int i = 0; i < a.Length; i++)
             {
-                if (counter == 0)
+                var newIndex = i - d;
+                if (newIndex < 0)
                 {
-                    resultArr = RotateLeft(a);
+                    newIndex += a.Length;
                 }
-                else
-                {
-                    resultArr = RotateLeft(resultArr);
-                }
-                counter++;
+                newArray[newIndex] = a[i];
             }
-            return resultArr;
-        }
-
-        private static int[] RotateLeft(int[] arr)
-        {
-            var newArr = new int[arr.Length];
-            Array.Copy(arr, 1, newArr, 0, arr.Length - 1);
-            newArr[newArr.Length - 1] = arr[0];
-            return newArr;
+            return newArray;
         }
     }
 }
