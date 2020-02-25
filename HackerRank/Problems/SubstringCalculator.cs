@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
-using System.Linq;
 
 namespace HackerRank.Problems
 {
@@ -10,30 +7,23 @@ namespace HackerRank.Problems
     {
         public static long Solve(string s)
         {
-            var stringList = new HashSet<string>();
-            for (int i = 0; i < s.Length; i++)
+            var sw = Stopwatch.StartNew();
+            var resultCount = 0;
+            var stringLength = s.Length;
+            for (int substringLength = 1; substringLength <= stringLength; substringLength++)
             {
-                for (int j = i; j < s.Length; j++)
+                var substrings = new HashSet<string>();
+                var substringCount = stringLength - substringLength + 1;
+                for (int j = 0; j < substringCount; j++)
                 {
-                    var substring = s.Substring(i, j - i + 1);
-                    if (!stringList.Contains(substring))
-                    {
-                        stringList.Add(substring);
-                    }
+                    var substring = s.Substring(j, substringLength);
+                    substrings.Add(substring);
                 }
+                resultCount += substrings.Count;
+                substrings.Clear();
             }
-            return stringList.Count;
-
-            var length = s.Length;
-            var totalSubstringCount = (length * (length + 1)) / 2;
-            var duplicates = s.GroupBy(x => x).Where(y => y.Count() > 1);
-            var duplicateCount = 0;
-            foreach (var item in duplicates)
-            {
-                duplicateCount += item.Count() - 1;
-            }
-            var result = totalSubstringCount - duplicateCount;
-            return result;
+            sw.Stop();
+            return resultCount;
         }
     }
 }
