@@ -15,6 +15,9 @@ namespace HackerRank
             _ = HourglassSum.Solve(HourglassSum.PrepareHourglassSumInput());
             _ = RotLeft.Solve(new int[] { 1, 2, 3, 4, 5 }, 2);
             _ = CountingValleys.Solve(8, "UDDDUDUU");
+            _ = FlipDigits.Solve("1010");
+
+            _ = SubstringCalculator.Solve("9");
 
             Console.ReadLine();
         }
