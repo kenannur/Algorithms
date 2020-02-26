@@ -18,6 +18,7 @@ namespace HackerRank
             _ = FlipDigits.Solve("1010");
             _ = SubstringCalculator.Solve("kinventich");
             NewYearChaos.Solve(new int[] { 2, 1, 5, 3, 4 });
+            _ = TimeConversion.Solve("12:40:22AM");
 
             Console.ReadLine();
         }
