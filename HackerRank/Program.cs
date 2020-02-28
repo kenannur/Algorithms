@@ -17,6 +17,7 @@ namespace HackerRank
             _ = CountingValleys.Solve(8, "UDDDUDUU");
             _ = FlipDigits.Solve("1010");
             _ = SubstringCalculator.Solve("kinventich");
+            
 
             Console.ReadLine();
         }
